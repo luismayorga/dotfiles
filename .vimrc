@@ -1,0 +1,12 @@
+syntax on
+set nocompatible
+set ruler
+set number
+set showmode
+set showcmd
+set title
+set cindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set background=dark
