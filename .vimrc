@@ -10,6 +10,7 @@ syntax on
 
 set encoding=utf8
 
+let mapleader=","
 
 """"""""""""""" LOOK
 "
@@ -66,3 +67,9 @@ set expandtab
 """"""""""""""" LATEX SUITE
 "
 let g:tex_flavor='latex'
+let Tex_FoldedSections=""
+let Tex_FoldedEnvironments=""
+let Tex_FoldedMisc=""
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_pdf = 'latexmk -pdf -f $*; latexmk -c'
+set iskeyword+=:
