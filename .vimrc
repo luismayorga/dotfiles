@@ -20,7 +20,11 @@ set ruler
 "Show line numbers
 set number
 
-set background=dark
+if has("gui_running")
+    set background=light
+else
+    set background=dark
+endif
 
 "Show editing mode
 set showmode
