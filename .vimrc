@@ -21,7 +21,9 @@ set ruler
 set number
 
 if has("gui_running")
-    set background=light
+    set background=dark
+    set guifont=Monaco:h13
+    "set transparency=5
 else
     set background=dark
 endif
@@ -77,3 +79,9 @@ let Tex_FoldedMisc=""
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = 'latexmk -pdf -f $*; latexmk -c'
 set iskeyword+=:
+
+"rainbow parentheses
+let g:rbpt_max = 16
+"Install plugins
+execute pathogen#infect()
+

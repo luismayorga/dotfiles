@@ -98,13 +98,6 @@ defaults write com.apple.dock wvous-bl-corner -int 10
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 ###############################################################################
-# Transmission.app                                                            #
-###############################################################################
-
-# Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
-
-###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
