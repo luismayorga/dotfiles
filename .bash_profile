@@ -1,5 +1,13 @@
+# COLOURS
+# =======
+
 export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+# dark bg colours
+#export LSCOLORS=GxFxCxDxBxegedabagaced
+
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source $GITAWAREPROMPT/main.sh
+export PS1="\e[1m\e[38;5;089m\h:\W \u \e[38;5;043m\$git_branch\e[38;5;197m\$git_dirty\[$txtrst\]\$ "
 
 #Colors on man
 man() {
@@ -13,13 +21,13 @@ man() {
         man "$@"
 }
 
-export PATH="/usr/local/bin:$PATH"
+# INCLUDE
+
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export SCALA_HOME='/usr/local/scala'
-export CLASSPATH="/usr/local/Cellar/antlr/4.2/antlr-4.2-complete.jar:$CLASSPATH"
-alias grun='java org.antlr.v4.runtime.misc.TestRig'
 
-#[ -s "/Users/luis/.nvm/nvm.sh" ] && . "/Users/luis/.nvm/nvm.sh" # This loads nvm
+[ -s "/Users/luis/.nvm/nvm.sh" ] && . "/Users/luis/.nvm/nvm.sh" # This loads nvm
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi

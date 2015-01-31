@@ -25,7 +25,7 @@ if has("gui_running")
     set guifont=Monaco:h13
     "set transparency=5
 else
-    set background=dark
+    set background=light
 endif
 
 "Show editing mode
