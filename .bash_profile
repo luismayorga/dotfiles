@@ -5,9 +5,9 @@ export CLICOLOR=1
 # dark bg colours
 #export LSCOLORS=GxFxCxDxBxegedabagaced
 
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
-source $GITAWAREPROMPT/main.sh
-export PS1="\e[1m\e[38;5;089m\h:\W \u \e[38;5;043m\$git_branch\e[38;5;197m\$git_dirty\[$txtrst\]\$ "
+#export GITAWAREPROMPT=~/.bash/git-aware-prompt
+#source $GITAWAREPROMPT/main.sh
+#export PS1="\e[1m\e[38;5;089m\h:\W \u \e[38;5;043m\$git_branch\e[38;5;197m\$git_dirty\[$txtrst\]\$ "
 
 #Colors on man
 man() {

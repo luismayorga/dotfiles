@@ -1,6 +1,7 @@
 """"""""""""""" GENERAL
 "
 set nocompatible
+set backspace=2
 
 "Detect the kind of file
 filetype plugin indent on
@@ -25,7 +26,7 @@ if has("gui_running")
     set guifont=Monaco:h13
     "set transparency=5
 else
-    set background=light
+    set background=dark
 endif
 
 "Show editing mode
