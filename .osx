@@ -104,3 +104,9 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 for app in "Dock" "Finder" "Mail" "Messages" "Terminal" "Transmission"; do
     killall "${app}" > /dev/null 2>&1
 done
+
+# Apps
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+brew install fpp
+brew cask install amethyst

@@ -19,21 +19,13 @@ man() {
         man "$@"
 }
 
-# Git prompt
-#==================#
-
-GIT_PROMPT_EXECUTABLE="haskell"
-source /usr/local/zsh-git-prompt/zshrc.sh
-PROMPT='%B%m%:~%b$(git_super_status)%# '
-
 #==================#
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/depot_tools:$PATH"
+export EDITOR="/usr/bin/vim"
 export JAVA_HOME=$(/usr/libexec/java_home)
-export SCALA_HOME='/usr/local/scala'
 
-
-[ -s "/Users/luis/.nvm/nvm.sh" ] && . "/Users/luis/.nvm/nvm.sh" # This loads nvm
+alias npm-exec='PATH=$(npm bin):$PATH'
 
 # The following lines were added by compinstall
 
@@ -50,3 +42,8 @@ SAVEHIST=1000
 setopt notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
+
+# VBOX for vagrant
+
+export AM_DEVBOX_MEMORY=8192 
+export AM_DEVBOX_CPUS=4
