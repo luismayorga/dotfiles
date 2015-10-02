@@ -71,18 +71,22 @@ set cindent
 set expandtab
 
 
-""""""""""""""" LATEX SUITE
+"""""""""""""""" LATEX SUITE
+""
+"let g:tex_flavor='latex'
+"let Tex_FoldedSections=""
+"let Tex_FoldedEnvironments=""
+"let Tex_FoldedMisc=""
+"let g:Tex_DefaultTargetFormat = 'pdf'
+"let g:Tex_CompileRule_pdf = 'latexmk -pdf -f $*; latexmk -c'
+"set iskeyword+=:
 "
-let g:tex_flavor='latex'
-let Tex_FoldedSections=""
-let Tex_FoldedEnvironments=""
-let Tex_FoldedMisc=""
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_pdf = 'latexmk -pdf -f $*; latexmk -c'
-set iskeyword+=:
-
-"rainbow parentheses
-let g:rbpt_max = 16
-"Install plugins
-execute pathogen#infect()
-
+""rainbow parentheses
+"let g:rbpt_max = 16
+""Install plugins
+"execute pathogen#infect()
+"
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
