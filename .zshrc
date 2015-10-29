@@ -7,6 +7,8 @@ export LS_COLORS="di=1;36;40:ln=1;35;40:so=1;32;40:pi=1;33;40:ex=1;31;40:bd=34;4
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias ls='ls -G'
 
+export PROMPT="%m op %~%# "
+
 #Colors on man
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
