@@ -6,6 +6,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export LS_COLORS="di=1;36;40:ln=1;35;40:so=1;32;40:pi=1;33;40:ex=1;31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=34;43:"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias ls='ls -G'
+alias ll='ls -Gl'
 
 export PROMPT="%m op %~%# "
 
@@ -28,6 +29,8 @@ export EDITOR="/usr/bin/vim"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 alias npm-exec='PATH=$(npm bin):$PATH'
+eval $(thefuck --alias)
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # The following lines were added by compinstall
 
