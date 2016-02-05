@@ -8,6 +8,8 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias ls='ls -G'
 alias ll='ls -Gl'
 
+alias glog='git log --decorate --graph --oneline --date-order'
+
 export PROMPT="%m op %~%# "
 
 #Colors on man
@@ -25,12 +27,17 @@ man() {
 #==================#
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/depot_tools:$PATH"
+
 export EDITOR="/usr/bin/vim"
+
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 alias npm-exec='PATH=$(npm bin):$PATH'
+
 eval $(thefuck --alias)
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.rbenv/shims:$PATH"
 
 # The following lines were added by compinstall
 
