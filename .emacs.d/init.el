@@ -44,6 +44,6 @@
 (with-eval-after-load 'clojure-mode
   (add-hook 'clojure-mode-hook       #'enable-paredit-mode)
   (add-hook 'clojure-mode-hook       #'rainbow-delimiters-mode)
-  (define-key evil-normal-state-map (kbd "M-.") nil)
-  (global-unset-key (kbd "M-.")))
+  (define-key evil-normal-state-map (kbd "M-.") nil) ;override evil undo
+  (global-unset-key (kbd "M-."))) ; override etags
 
