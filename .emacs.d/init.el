@@ -22,6 +22,7 @@
     rainbow-delimiters
     projectile
     helm-projectile
+    company
     magit))
 
 (if (eq system-type 'darwin)
@@ -38,12 +39,16 @@
 (projectile-global-mode)
 (show-paren-mode 1)
 (load-theme 'dracula t)
+(global-company-mode)
 
 ;; Clojure
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (with-eval-after-load 'clojure-mode
   (add-hook 'clojure-mode-hook       #'enable-paredit-mode)
   (add-hook 'clojure-mode-hook       #'rainbow-delimiters-mode)
-  (define-key evil-normal-state-map (kbd "M-.") nil) ;override evil undo
+  (add-hook 'clojure-mode-hook       #'cider-enlighten-mode)
+  (setq cider-debug-prompt 'minibuffer)
+  (global-set-key (kbd "M-TAB") #'company-complete) ; use M-TAB, a.k.a. C-M-i, as manual trigger
+  (define-key evil-normal-state-map (kbd "M-.") nil) ; override evil undo
   (global-unset-key (kbd "M-."))) ; override etags
 
