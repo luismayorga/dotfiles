@@ -9,6 +9,9 @@ alias ls='ls -G'
 alias ll='ls -Gl'
 
 alias glog='git log --decorate --graph --oneline --date-order'
+alias gitpp='git status | fpp'
+alias gits='git status'
+
 
 export PROMPT="%m op %~%# "
 
