@@ -110,3 +110,12 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew update
 brew install fpp
 brew cask install amethyst
+brew install jid
+brew install git
+brew install p7zip
+brew install python
+brew install ruby
+brew install rbenv
+brew install leiningen
+# brew install elixir
+# brew install postgresql

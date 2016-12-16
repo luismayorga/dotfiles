@@ -39,7 +39,7 @@
 (show-paren-mode 1)
 (load-theme 'zenburn t)
 (global-company-mode)
-(toggle-frame-fullscreen)
+;(toggle-frame-fullscreen)
 
 
 ;; Clojure
@@ -56,7 +56,6 @@
 				       (local-set-key (kbd "C-c C-r") #'cljr-helm)))
 
   (setq cider-debug-prompt 'minibuffer)
-  (setq cider-refresh-before-fn "dev/stop")
 
   (global-set-key (kbd "M-TAB") #'company-complete) ; use M-TAB, a.k.a. C-M-i, as manual trigger
   (define-key evil-normal-state-map (kbd "M-.") nil) ; override evil undo

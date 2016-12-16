@@ -9,8 +9,9 @@ alias ls='ls -G'
 alias ll='ls -Gl'
 
 alias glog='git log --decorate --graph --oneline --date-order'
-alias gitpp='git status | fpp'
-alias gits='git status'
+alias gitpp='git status | fpp '
+alias gits='git status '
+alias gitd='git diff '
 
 
 export PROMPT="%m op %~%# "
@@ -29,7 +30,7 @@ man() {
 
 #==================#
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/depot_tools:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 export EDITOR="/usr/bin/vim"
 
@@ -39,8 +40,8 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 
 eval $(thefuck --alias)
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH="$HOME/.rbenv/shims:$PATH"
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+#export PATH="$HOME/.rbenv/shims:$PATH"
 
 # The following lines were added by compinstall
 
@@ -52,8 +53,8 @@ compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
