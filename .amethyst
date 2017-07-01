@@ -123,9 +123,11 @@
     },
 
     "MISC": "----------------------",
-    "floating": ["com.apple.finder",
+    "floating": 
+        ["com.apple.finder",
         "com.apple.Activity",
-        "com.apple.iTunes"],
+        "com.apple.iTunes",
+        "WhatsApp"],
     "float-small-windows": true,
     "mouse-follows-focus": true,
     "enables-layout-hud": true,
