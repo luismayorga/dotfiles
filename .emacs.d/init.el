@@ -3,6 +3,8 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
+(load-file "~/.emacs.d/elpa/seq-2.20/seq-25.el")
+
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -14,6 +16,7 @@
     clojure-mode-extra-font-locking
     cider
     paredit
+    seq
     clj-refactor
     cljr-helm
     align-cljlet
@@ -22,7 +25,9 @@
     helm-projectile
     company
     zenburn-theme
-    magit))
+    magit
+    spotify
+    json-mode))
 
 (if (eq system-type 'darwin)
     (add-to-list 'modules-to-import 'exec-path-from-shell))
@@ -39,7 +44,7 @@
 (show-paren-mode 1)
 (load-theme 'zenburn t)
 (global-company-mode)
-;(toggle-frame-fullscreen)
+(toggle-frame-fullscreen)
 
 
 ;; Clojure
@@ -56,6 +61,7 @@
 				       (local-set-key (kbd "C-c C-r") #'cljr-helm)))
 
   (setq cider-debug-prompt 'minibuffer)
+  (setq cider-test-defining-forms (add-to-list 'cider-test-defining-forms "deftest-with-api-versions"))
 
   (global-set-key (kbd "M-TAB") #'company-complete) ; use M-TAB, a.k.a. C-M-i, as manual trigger
   (define-key evil-normal-state-map (kbd "M-.") nil) ; override evil undo
@@ -63,3 +69,18 @@
 
   (setq cljr-magic-requires :prompt)
   (cljr-add-keybindings-with-prefix "\C-c r")) 
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (json-mode yaml-mode markdown-mode zenburn-theme solarized-theme scss-mode rainbow-delimiters puppet-mode mustache-mode magit helm-projectile goto-last-change exec-path-from-shell evil dracula-theme diminish company clojure-mode-extra-font-locking cljr-helm align-cljlet ag))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

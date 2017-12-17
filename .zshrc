@@ -31,17 +31,15 @@ man() {
 #==================#
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/node@4/bin:$PATH"
+alias npm-exec='PATH=$(npm bin):$PATH'
 
 export EDITOR="/usr/bin/vim"
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-alias npm-exec='PATH=$(npm bin):$PATH'
 
 eval $(thefuck --alias)
-
-#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-#export PATH="$HOME/.rbenv/shims:$PATH"
 
 # The following lines were added by compinstall
 
@@ -59,7 +57,4 @@ setopt notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-# VBOX for vagrant
-
-export AM_DEVBOX_MEMORY=8192 
-export AM_DEVBOX_CPUS=4
+source ~/.zshrc_secrets
