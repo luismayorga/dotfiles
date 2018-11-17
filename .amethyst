@@ -6,7 +6,6 @@
         "fullscreen",
         "column"
     ],
-
     "MODIFIERS": "----------------------",
     "Valid modifiers are": [
         "option",
@@ -14,7 +13,6 @@
         "control",
         "command"
     ],
-
     "mod1": [
         "option",
         "shift"
@@ -24,7 +22,6 @@
         "shift",
         "control"
     ],
-
     "COMMANDS": "----------------------",
     "Commands are": {
         "cycle-layout": "Cycle layout to the next layout",
@@ -40,7 +37,6 @@
         "swap-main": "Swap focused window with the main window of its screen",
         "toggle-float": "Toggle the focused window between being floating and tiled"
     },
-
     "cycle-layout": {
         "mod": "mod1",
         "key": "space"
@@ -121,13 +117,13 @@
         "mod": "mod1",
         "key": "i"
     },
-
     "MISC": "----------------------",
-    "floating": 
-        ["com.apple.finder",
+    "floating": [
+        "com.apple.finder",
+        "WhatsApp",
         "com.apple.Activity",
-        "com.apple.iTunes",
-        "WhatsApp"],
+        "com.apple.iTunes"
+    ],
     "float-small-windows": true,
     "mouse-follows-focus": true,
     "enables-layout-hud": true,
