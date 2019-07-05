@@ -1,7 +1,11 @@
 (require 'package)
 
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+(setq package-archive-priorities
+      '(("melpa-stable" . 50)
+        ("melpa" . 20)))
 
 (package-initialize)
 
@@ -10,6 +14,7 @@
 
 (defvar modules-to-import
   '(evil
+    smart-mode-line
     clojure-mode
     clojure-mode-extra-font-locking
     cider
@@ -37,6 +42,7 @@
 (tool-bar-mode -1)
 (show-paren-mode 1)
 (load-theme 'zenburn t)
+(sml/setup)
 (global-company-mode)
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
@@ -51,23 +57,9 @@
 
   (setq cider-refresh-show-log-buffer t)
   (setq cider-debug-prompt 'minibuffer)
+  (setq cider-repl-display-help-banner nil)
 
   (global-set-key (kbd "M-TAB") #'company-complete) ; use M-TAB, a.k.a. C-M-i, as manual trigger
   (define-key evil-normal-state-map (kbd "M-.") nil) ; override evil undo
   (local-unset-key (kbd "M-.")) ; override etags
- ) 
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (cider json-mode yaml-mode markdown-mode zenburn-theme solarized-theme scss-mode rainbow-delimiters puppet-mode mustache-mode magit helm-projectile goto-last-change exec-path-from-shell evil dracula-theme diminish company clojure-mode-extra-font-locking cljr-helm align-cljlet ag))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  )
