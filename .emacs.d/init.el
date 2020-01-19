@@ -20,13 +20,14 @@
     cider
     paredit
     seq
-    align-cljlet
     rainbow-delimiters
+    ag
     projectile
     helm-projectile
     company
     zenburn-theme
     magit
+    org-bullets
     json-mode))
 
 (if (eq system-type 'darwin)
@@ -37,6 +38,7 @@
     (package-install p)))
 
 ;; Global opts
+(setq make-backup-files nil)
 (evil-mode 1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -58,8 +60,14 @@
   (setq cider-refresh-show-log-buffer t)
   (setq cider-debug-prompt 'minibuffer)
   (setq cider-repl-display-help-banner nil)
+  (setq cider-inject-dependencies-at-jack-in nil)
 
   (global-set-key (kbd "M-TAB") #'company-complete) ; use M-TAB, a.k.a. C-M-i, as manual trigger
   (define-key evil-normal-state-map (kbd "M-.") nil) ; override evil undo
   (local-unset-key (kbd "M-.")) ; override etags
  )
+
+;; Org-mode
+
+(setq org-log-done 'time)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
