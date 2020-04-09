@@ -6,7 +6,8 @@ set encoding=utf8
 let mapleader=","
 set ruler
 set number
-set background=dark
+set background=light
+colo seoul256-light
 set showmode
 set showcmd
 set title

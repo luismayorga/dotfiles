@@ -45,6 +45,7 @@
 (show-paren-mode 1)
 (load-theme 'zenburn t)
 (sml/setup)
+(setq-default show-trailing-whitespace t)
 (global-company-mode)
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
