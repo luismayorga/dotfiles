@@ -7,13 +7,7 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 #No dashboard!
-defaults write com.apple.dashboard mcx-disabled -boolean YES 
-
-#Highlight color red
-defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.694100 0.549000"
-
-# Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+defaults write com.apple.dashboard mcx-disabled -boolean YES
 
 sudo chflags nohidden ~/Library/
 
@@ -35,17 +29,8 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Finder: show path bar
-defaults write com.apple.finder ShowPathbar -bool true
-
 # Finder: allow text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
-
-# Display full POSIX path as Finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-
-# Disable the warning when changing a file extension
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
@@ -101,10 +86,6 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Dock" "Finder" "Mail" "Messages" "Terminal" "Transmission"; do
+for app in "Dock" "Finder" "Terminal"; do
     killall "${app}" > /dev/null 2>&1
 done
-
-# Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew update

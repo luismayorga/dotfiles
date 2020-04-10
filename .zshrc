@@ -1,9 +1,7 @@
-# COLOURS
-#==================#
-#
 autoload -U colors && colors
 
-export PROMPT='%m %~ %# '
+export PROMPT='%m %1~ %(?.%F{63}~>.%F{167}~>)%f '
+
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export ZLE_RPROMPT_INDENT=0
@@ -16,10 +14,6 @@ alias gits='git status '
 #==================#
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/node@8/bin:$PATH"
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-alias npm-exec='PATH=$(npm bin):$PATH'
-
 export EDITOR="/usr/bin/vim"
 
 export JAVA_HOME=$(/usr/libexec/java_home)
