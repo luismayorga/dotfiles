@@ -28,7 +28,8 @@
     zenburn-theme
     magit
     org-bullets
-    json-mode))
+    json-mode
+    flycheck-clj-kondo))
 
 (if (eq system-type 'darwin)
     (add-to-list 'modules-to-import 'exec-path-from-shell))
@@ -50,6 +51,7 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(require 'flycheck-clj-kondo)
 
 ;; Clojure
 
@@ -57,6 +59,7 @@
 (with-eval-after-load 'clojure-mode
   (add-hook 'clojure-mode-hook       #'enable-paredit-mode)
   (add-hook 'clojure-mode-hook       #'rainbow-delimiters-mode)
+  (add-hook 'clojure-mode-hook       #'flycheck-mode)
 
   (setq cider-refresh-show-log-buffer t)
   (setq cider-debug-prompt 'minibuffer)
