@@ -9,14 +9,23 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 alias glog='git log --decorate --graph --oneline --date-order'
 alias gitpp='git status | fpp '
-alias gits='git status '
+alias gits='git status'
+alias gitp='git pull'
+alias ll='ls -lah'
+alias emacs='emacs -nw'
 
-#==================#
-
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export EDITOR="/usr/bin/vim"
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+#export JAVA_HOME=`/usr/libexec/java_home -v 11.0.19`
+#export JAVA_HOME=`/usr/libexec/java_home -v 17.0.1`
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+eval "$(direnv hook zsh)"
 
 # The following lines were added by compinstall
 
@@ -33,5 +42,3 @@ SAVEHIST=10000
 HISTFILESIZE=100000
 setopt notify
 # End of lines configured by zsh-newuser-install
-
-source ~/.zshrc_secrets
